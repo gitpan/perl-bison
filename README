@@ -1,0 +1,41 @@
+This directory contains the Bison parser generator.
+
+See the file INSTALL for compilation and installation instructions.
+
+It was once true that, when installing Bison on Sequent (or Pyramid?)
+systems, you had to be in the Berkeley universe.  This may no longer
+be true; we have no way to tell.
+
+On VMS, you will probably have to create Makefile from Makefile.in by
+hand.  Remember to do `SET COMMAND BISON' to install the data in
+`BISON.CLD'.
+
+Most of the code here is bison v1.25; the modifications required to
+generate perl code are relatively minor and do not add any
+functionality to the core. Please send perl-related bug reports to
+sfink@cs.berkeley.edu. I am not the maintainer of bison; I have only
+issued this modified release. Note that this is an alpha
+release. Someday, I would like to rewrite my changes (as well as parts
+of the regular .y file parser), but I'm putting it out now because it
+looks like it may be a while before I can get around to working on
+this again.
+
+There is a fairly good chance that I will be working on related tools
+in the near future, including a perl-only parser generator and a
+graphical parser debugging utility (as in, watch the parse tree as it
+is being built, ask for explanations of why there is a shift/reduce
+conflict in state 412 and what input stream might cause it to occur,
+etc.) If either of the above sound interesting and/or useful, please
+send me email at sfink@cs.berkeley.edu before mid-May, 1998. I will be
+doing this for a user interface class, and user comments and
+suggestions are extremely important and helpful. After May, I would
+still gratefully welcome all comments or suggestions; warm fuzzies and
+a vague feeling of being useful to humanity are why I'm doing this. ;-)
+
+Send all other bug reports to bug-gnu-utils@prep.ai.mit.edu.  If you
+think the problem might be related to the perl-related additions,
+please try using an unmodified bison first (and if you don't need the
+perl support, you should not be using this version until it's at least
+a beta release!) Please include the version number from 
+`bison --version', and a complete, self-contained test case in each bug
+report.

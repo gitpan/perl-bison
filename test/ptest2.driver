@@ -1,0 +1,32 @@
+# REMEMBER TO RUN THIS FILE WITH perl -P (uses the preprocessor)
+
+#define YYDEBUG 1
+package Parser;
+
+#include "ptest2.tab.ph"
+#include "ptest2.tab.pl"
+
+$instring = "3 4 + 5 * ~ sin 4 +";
+@inbuf = split(/\s+/, $instring);
+
+#local(@inbuf) = ('3', '4', '5');
+sub yylex {
+    if (defined ($yylval = shift(@inbuf))) {
+	if ($yylval =~ /^[0-9]+$/) {
+	    return NUM;
+	} elsif (length($yylval) == 1) {
+	    return ord($yylval);
+	} elsif ($yylval eq 'sin') {
+	    return NUM+1;
+	} else {
+	    return ID;
+	}
+    } else {
+	return 0;
+    }
+}
+
+sub yyerror ($) { die $_[0]."\n"; }
+
+# $yydebug = 1;
+yyparse();
