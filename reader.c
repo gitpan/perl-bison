@@ -503,7 +503,7 @@ int stack_offset;
     }
   else { /* Normal perl variable */
     putc('$', fp);
-    putc(c, fp);
+    ungetc(c, finput);
   }
 }
 

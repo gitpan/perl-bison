@@ -1,17 +1,17 @@
 THIS FILE WAS NOT WRITTEN NOR ENDORSED BY THE AUTHORS OF BISON. IT IS
 WHOLLY THE PERSONAL OPINIONS AND OBSERVATIONS OF STEVE A FINK
 <sfink@cs.berkeley.edu>, THE AUTHOR OF THE PERL-RELATED
-MODIFICATIONS. ALL INACCURACIES AND MISPERCEPTIONS ARE HIS
+MODIFICATIONS. ALL INACCURACIES AND MISCONCEPTIONS ARE HIS
 RESPONSIBILITY ALONE.
 
 One of the most frequent activities of a programmer appears to be
-reinventing wheels. We all know that we should be building on top of other
-people's code, but it seems easier or at least more gratifying to
-charge ahead and do it all again. At the same time, most of us think
-that everyone *else* should be using our code instead of rewriting it
-from scratch. Besides, reusing code can be quite difficult -- it may
-be written in a different style, poorly encapsulated, or just
-applicable to a slightly different problem.
+reinventing wheels. We all know that we should be building on top of
+other people's code, but it seems easier or at least more gratifying
+to charge ahead and do it all again. At the same time, most of us
+think that everyone *else* should be using our code instead of
+rewriting it from scratch. Besides, reusing code can be quite
+difficult -- it may be written in a different style, poorly
+encapsulated, or just applicable to a slightly different problem.
 
 Since programmers cannot be cured, this file is intended to make the
 accompanying code easier to reuse. Bowing to the inevitable, I will
@@ -21,10 +21,11 @@ harder to break out from the whole and salvage.
 
 ----------------------------------------------------------------------
 
-This file is for perl-bison, based on bison v1.25 and perl
-modification v1.0. I have attempted to describe the bison portions as
-well as the perl modifications, but I'm actually writing this over a
-year after I wrote my modifications, so my memory is quite vague.
+This file is for perl-bison, based on bison v1.25 with minor
+modifications to generate perl parsing code. I have attempted to
+describe the bison portions as well as the perl modifications, but I'm
+actually writing this over a year after I wrote my modifications, so
+my memory is quite vague.
 
 Fragments:
 
@@ -33,8 +34,8 @@ study to figure out what the heck is going on. Lots of densely packed
 C structures and things. You'll probably need the dragon book to make
 any sense of what's going on. (Ug, I don't have my copy with me right
 now, but hopefully you know what I mean.) If you stare at the code for
-as long as I have, you may end up admiring the efficiency and
-terseness -- but it's a pain to interpret, modify, or extract.
+long enough, you may end up admiring the efficiency and terseness as I
+did -- but it's still a pain to interpret, modify, or extract.
 
 Yacc file parser -- Unfortunately, the .y file parser is not written
 in yacc (or bison). Instead, it appears to be completely

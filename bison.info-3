@@ -964,7 +964,7 @@ useful in actions.
      errors.  This is useful primarily in error rules.  *Note Error
      Recovery::.
 
-`@N'
+`@N' (or `@@N' in perl)
      Acts like a structure variable containing information on the line
      numbers and column numbers of the Nth component of the current
      rule.  The structure has four members, like this:
@@ -975,14 +975,15 @@ useful in actions.
           };
 
      Thus, to get the starting line number of the third component, use
-     `@3.first_line'.
+     `@3.first_line' (`@@3->{first_line}' for perl).
 
      In order for the members of this structure to contain valid
      information, you must make `yylex' supply this information about
      each token.  If you need only certain members, then `yylex' need
      only fill in those members.
 
-     The use of this feature makes the parser noticeably slower.
+     The use of this feature makes the parser noticeably slower. (Not for
+     perl! At least, I doubt it'll get noticeably slower than it already is!)
 
 
 File: bison.info,  Node: Algorithm,  Next: Error Recovery,  Prev: Interface,  Up: Top

@@ -780,6 +780,11 @@ option.
      errors with the parser file, treating it as an independent source
      file in its own right.
 
+`-L LANGUAGE'
+`--language=LANGUAGE'
+     Generate a parser using language LANGUAGE. Current valid options
+     are `C' (the default) and `perl'.
+
 `-n'
 `--no-parser'
      Do not include any C code in the parser file; generate tables
@@ -868,6 +873,7 @@ find the corresponding short option.
      --file-prefix=PREFIX                  -b FILE-PREFIX
      --fixed-output-files --yacc           -y
      --help                                -h
+     --language=LANGUAGE                   -L LANGUAGE
      --name-prefix=PREFIX                  -p NAME-PREFIX
      --no-lines                            -l
      --no-parser                           -n

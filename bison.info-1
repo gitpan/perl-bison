@@ -63,7 +63,7 @@ The Concepts of Bison
 * Semantic Values::   Each token or syntactic grouping can have
                         a semantic value (the value of an integer,
                         the name of an identifier, etc.).
-* Semantic Actions::  Each rule can have an action containing C code.
+* Semantic Actions::  Each rule can have an action containing C (or perl) code.
 * Bison Parser::      What are Bison's input and output,
                         how is the output used?
 * Stages::            Stages in writing and running Bison grammars.
@@ -219,7 +219,8 @@ Bison in detail.
 it Yacc-compatible.  Wilfred Hansen of Carnegie Mellon University added
 multicharacter string literals and other features.
 
-   This edition corresponds to version 1.25 of Bison.
+   This edition corresponds to version 1.25 of Bison (with modifications
+to permit the generation of Perl parsers.)
 
 
 File: bison.info,  Node: Conditions,  Next: Copying,  Prev: Introduction,  Up: Top
@@ -832,9 +833,9 @@ Semantic Actions
 
    In order to be useful, a program must do more than parse input; it
 must also produce some output based on the input.  In a Bison grammar,
-a grammar rule can have an "action" made up of C statements.  Each time
-the parser recognizes a match for that rule, the action is executed.
-*Note Actions::.
+a grammar rule can have an "action" made up of C (or perl) statements.
+Each time the parser recognizes a match for that rule, the action is
+executed.  *Note Actions::.
 
    Most of the time, the purpose of an action is to compute the
 semantic value of the whole construct from the semantic values of its
